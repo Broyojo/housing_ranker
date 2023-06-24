@@ -323,7 +323,7 @@ pub fn get_housing() -> Vec<Hall> {
             elevator: true,
             laundry: Laundry::OtherBuilding,
             built: 1984,
-            last_renovated: 1984,
+            last_renovated: 2020,
             room_area: 27360,
         },
         Hall {
@@ -336,7 +336,7 @@ pub fn get_housing() -> Vec<Hall> {
             elevator: true,
             laundry: Laundry::OneFloor,
             built: 1984,
-            last_renovated: 1984,
+            last_renovated: 2020,
             room_area: 27360,
         },
     ]

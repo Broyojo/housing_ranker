@@ -1,6 +1,7 @@
-mod house;
+mod distances;
+mod hall;
 
-use house::{get_housing, Bathroom, Community, Hall, Laundry, Location, RoomStyle};
+use hall::{get_housing, Bathroom, Hall, Laundry, Location, RoomStyle};
 
 fn main() {
     let mut housing = get_housing();
@@ -12,7 +13,7 @@ fn main() {
         east_campus: 0.0,
         doubles: 0.0,
         triples: 0.0,
-        quad: 0.0,
+        quad: 3.0,
         suite: 5.0,
         coed: 3.0,
         elevator: 1.0,
@@ -21,8 +22,10 @@ fn main() {
         laundry_every_floor: 5.0,
         built: 7.0,
         last_renovated: 8.0,
-        room_area: 1.0,
+        room_area: 10.0,
     };
+
+    // let important_addresses = &[];
 
     housing.sort_by(|a, b| {
         score_function(a, &weights)
@@ -88,7 +91,7 @@ fn score_function(hall: &Hall, weights: &Weights) -> f64 {
         (x - min_x) as f64 / (max_x - min_x) as f64
     }
     score += normalize(hall.built, 1925, 1984) * weights.built;
-    score += normalize(hall.last_renovated, 1984, 2015) * weights.last_renovated;
+    score += normalize(hall.last_renovated, 1984, 2020) * weights.last_renovated;
     score += normalize(hall.room_area, 21600, 27360) * weights.room_area;
     score
 }
