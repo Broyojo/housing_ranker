@@ -1,4 +1,4 @@
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum Bathroom {
     SharedOnHall,
     PerRoom,
@@ -15,7 +15,7 @@ pub enum Community {
     GlobalLeadership,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum Location {
     WestCampus,
     EastCampus,
@@ -29,14 +29,14 @@ pub enum RoomStyle {
     Suite,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum Laundry {
     OtherBuilding,
     OneFloor,
     EveryFloor,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Hall {
     pub name: &'static str,
     pub bathroom: Bathroom,
@@ -46,9 +46,14 @@ pub struct Hall {
     pub coed: bool,
     pub elevator: bool,
     pub laundry: Laundry,
-    pub built: i32,
-    pub last_renovated: i32,
-    pub room_area: i32, // square inches
+    pub built: i32,                        // year
+    pub last_renovated: i32,               // year
+    pub room_area: i32,                    // square inches
+    pub time_to_brittain: i32,             // minutes
+    pub time_to_student_center: i32,       // minutes
+    pub time_to_college_of_computing: i32, // minutes
+    pub time_to_crc: i32,                  // minutes
+    pub time_to_library: i32,              // minutes
 }
 
 pub fn get_housing() -> Vec<Hall> {
@@ -65,6 +70,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1969,
             last_renovated: 2006,
             room_area: 24920,
+            time_to_brittain: 23,
+            time_to_student_center: 13,
+            time_to_college_of_computing: 10,
+            time_to_crc: 8,
+            time_to_library: 14,
         },
         Hall {
             name: "Brown",
@@ -78,6 +88,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1925,
             last_renovated: 1993,
             room_area: 21600,
+            time_to_brittain: 2,
+            time_to_student_center: 11,
+            time_to_college_of_computing: 14,
+            time_to_crc: 17,
+            time_to_library: 7,
         },
         Hall {
             name: "Caldwell",
@@ -91,6 +106,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1969,
             last_renovated: 2002,
             room_area: 21600,
+            time_to_brittain: 23,
+            time_to_student_center: 14,
+            time_to_college_of_computing: 10,
+            time_to_crc: 8,
+            time_to_library: 14,
         },
         Hall {
             name: "Cloudman",
@@ -104,6 +124,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1931,
             last_renovated: 1995,
             room_area: 21600,
+            time_to_brittain: 2,
+            time_to_student_center: 12,
+            time_to_college_of_computing: 13,
+            time_to_crc: 17,
+            time_to_library: 6,
         },
         Hall {
             name: "Field",
@@ -117,6 +142,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1961,
             last_renovated: 2005,
             room_area: 23760,
+            time_to_brittain: 3,
+            time_to_student_center: 10,
+            time_to_college_of_computing: 12,
+            time_to_crc: 16,
+            time_to_library: 4,
         },
         Hall {
             name: "Fitten",
@@ -130,6 +160,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1972,
             last_renovated: 2012,
             room_area: 26410,
+            time_to_brittain: 22,
+            time_to_student_center: 12,
+            time_to_college_of_computing: 9,
+            time_to_crc: 7,
+            time_to_library: 13,
         },
         Hall {
             name: "Folk",
@@ -143,6 +178,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1969,
             last_renovated: 2005,
             room_area: 25576,
+            time_to_brittain: 23,
+            time_to_student_center: 14,
+            time_to_college_of_computing: 10,
+            time_to_crc: 8,
+            time_to_library: 14,
         },
         Hall {
             name: "Freeman",
@@ -156,6 +196,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1972,
             last_renovated: 2011,
             room_area: 27160,
+            time_to_brittain: 21,
+            time_to_student_center: 11,
+            time_to_college_of_computing: 9,
+            time_to_crc: 6,
+            time_to_library: 12,
         },
         Hall {
             name: "Glenn",
@@ -169,6 +214,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1947,
             last_renovated: 2015,
             room_area: 23808,
+            time_to_brittain: 3,
+            time_to_student_center: 11,
+            time_to_college_of_computing: 12,
+            time_to_crc: 16,
+            time_to_library: 5,
         },
         Hall {
             name: "Hanson",
@@ -182,6 +232,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1961,
             last_renovated: 2002,
             room_area: 24156,
+            time_to_brittain: 3,
+            time_to_student_center: 11,
+            time_to_college_of_computing: 12,
+            time_to_crc: 16,
+            time_to_library: 5,
         },
         Hall {
             name: "Harris",
@@ -195,6 +250,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1926,
             last_renovated: 1992,
             room_area: 25920,
+            time_to_brittain: 2,
+            time_to_student_center: 11,
+            time_to_college_of_computing: 14,
+            time_to_crc: 17,
+            time_to_library: 7,
         },
         Hall {
             name: "Harrison",
@@ -208,6 +268,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1939,
             last_renovated: 1998,
             room_area: 24156,
+            time_to_brittain: 1,
+            time_to_student_center: 13,
+            time_to_college_of_computing: 14,
+            time_to_crc: 18,
+            time_to_library: 7,
         },
         Hall {
             name: "Hefner",
@@ -221,6 +286,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1969,
             last_renovated: 2008,
             room_area: 24920,
+            time_to_brittain: 22,
+            time_to_student_center: 13,
+            time_to_college_of_computing: 9,
+            time_to_crc: 8,
+            time_to_library: 13,
         },
         Hall {
             name: "Hopkins",
@@ -234,6 +304,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1961,
             last_renovated: 1995,
             room_area: 24120,
+            time_to_brittain: 3,
+            time_to_student_center: 11,
+            time_to_college_of_computing: 12,
+            time_to_crc: 16,
+            time_to_library: 5,
         },
         Hall {
             name: "Howell",
@@ -247,6 +322,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1939,
             last_renovated: 1999,
             room_area: 23808,
+            time_to_brittain: 1,
+            time_to_student_center: 13,
+            time_to_college_of_computing: 15,
+            time_to_crc: 19,
+            time_to_library: 7,
         },
         Hall {
             name: "Matheson",
@@ -260,6 +340,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1961,
             last_renovated: 2002,
             room_area: 24120,
+            time_to_brittain: 3,
+            time_to_student_center: 11,
+            time_to_college_of_computing: 11,
+            time_to_crc: 16,
+            time_to_library: 5,
         },
         Hall {
             name: "Montag",
@@ -273,6 +358,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1972,
             last_renovated: 2011,
             room_area: 27160,
+            time_to_brittain: 21,
+            time_to_student_center: 11,
+            time_to_college_of_computing: 10,
+            time_to_crc: 6,
+            time_to_library: 12,
         },
         Hall {
             name: "Perry",
@@ -286,6 +376,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1961,
             last_renovated: 2002,
             room_area: 23040,
+            time_to_brittain: 3,
+            time_to_student_center: 11,
+            time_to_college_of_computing: 11,
+            time_to_crc: 16,
+            time_to_library: 5,
         },
         Hall {
             name: "Smith",
@@ -299,6 +394,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1947,
             last_renovated: 1993,
             room_area: 23736,
+            time_to_brittain: 1,
+            time_to_student_center: 10,
+            time_to_college_of_computing: 14,
+            time_to_crc: 17,
+            time_to_library: 7,
         },
         Hall {
             name: "Towers",
@@ -312,6 +412,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1947,
             last_renovated: 2014,
             room_area: 23994,
+            time_to_brittain: 2,
+            time_to_student_center: 11,
+            time_to_college_of_computing: 12,
+            time_to_crc: 16,
+            time_to_library: 5,
         },
         Hall {
             name: "Woodruff North",
@@ -325,6 +430,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1984,
             last_renovated: 2020,
             room_area: 27360,
+            time_to_brittain: 24,
+            time_to_student_center: 15,
+            time_to_college_of_computing: 12,
+            time_to_crc: 8,
+            time_to_library: 15,
         },
         Hall {
             name: "Woodruff South",
@@ -338,6 +448,11 @@ pub fn get_housing() -> Vec<Hall> {
             built: 1984,
             last_renovated: 2020,
             room_area: 27360,
+            time_to_brittain: 24,
+            time_to_student_center: 15,
+            time_to_college_of_computing: 12,
+            time_to_crc: 8,
+            time_to_library: 15,
         },
     ]
 }
