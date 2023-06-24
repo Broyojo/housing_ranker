@@ -7,31 +7,30 @@ async fn main() {
     let mut housing = get_housing();
 
     let weights = Weights {
-        bathroom_shared_on_hall: 0.0,
-        bathroom_shared_per_room: 3.0,
-        west_campus: 1.0,
-        east_campus: 0.0,
-        doubles: 0.0,
-        triples: 0.0,
-        quad: 0.0,
-        suite: 0.0,
-        coed: 3.0,
-        elevator: 1.0,
-        laundry_other_building: 0.0,
-        laundry_one_floor: 2.0,
-        laundry_every_floor: 5.0,
-        built: 5.0,
-        last_renovated: 8.0,
-        room_area: 10.0,
-        time_to_brittain: 7.0,
-        time_to_student_center: 7.0,
-        time_to_college_of_computing: 7.0,
-        time_to_crc: 7.0,
-        time_to_library: 7.0,
+        bathroom_shared_on_hall: 1.0,      // Less desirable
+        bathroom_shared_per_room: 3.0,     // More desirable
+        west_campus: 3.0,                  // Quiet, larger rooms, near some amenities
+        east_campus: 3.0,                  // Vibrant, near dining options, Greek life
+        doubles: 3.0,                      // A balance of privacy and social interaction
+        triples: 1.0,                      // Less privacy
+        quad: 2.0,                         // More social interaction, but potentially less privacy
+        suite: 4.0,                        // More privacy and typically newer facilities
+        coed: 3.0,                         // Maintaining the same weight
+        elevator: 2.0,                     // Higher accessibility can be a nice convenience
+        laundry_other_building: 1.0,       // Less convenient
+        laundry_one_floor: 2.0,            // More convenient than another building
+        laundry_every_floor: 4.0,          // Most convenient
+        built: 2.0,                        // Newer buildings can have more modern amenities
+        last_renovated: 4.0,               // Recent renovations may indicate updated facilities
+        room_area: 5.0,                    // Space for studying and relaxation is important
+        time_to_brittain: 3.0,             // Dining option
+        time_to_student_center: 4.0,       // A hub for resources and activities
+        time_to_college_of_computing: 6.0, // High priority for a CS major
+        time_to_crc: 3.0,                  // Access to recreation center can be important
+        time_to_library: 5.0,              // Access to resources for studying
     };
 
     let value_ranges = ValueRanges::from(housing.clone());
-
     println!("{value_ranges:?}");
 
     housing.sort_by(|a, b| {
